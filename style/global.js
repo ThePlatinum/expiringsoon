@@ -9,6 +9,16 @@ const color_secondary = 'F51515'
 const color_black = '000000'
 const color_white = 'FFFFFF'
 
+// Base Texts
+// TODO: Allow custom font
+const BasePuiText = styled.Text`
+  font-family: 'merriweather-Light';
+`
+const BasePuiTextInput = styled.TextInput`
+  font-family: 'merriweather-Light';
+`
+
+
 // Layout
 export const Container = styled.View`
   flex: 1;
@@ -21,6 +31,7 @@ export const PuiSafeAreaView = styled.SafeAreaView`
   height: 100%;
   padding-top: 25px;
 `;
+// TODO: Use device statusbar height in android
 
 // Displays
 export const Flex = styled.View`
@@ -33,7 +44,7 @@ export const Flex = styled.View`
 
 
 // Form and Inputs
-export const InputField = styled.TextInput`
+export const InputField = styled(BasePuiTextInput)`
   border: 1px #${color_primary}25 solid;
   border-radius: 5px;
   width: 100%;
@@ -41,7 +52,7 @@ export const InputField = styled.TextInput`
   font-size: ${props => props.size ?? input_font_size}px;
 `;
 
-export const InputLabel = styled.Text`
+export const InputLabel = styled(BasePuiText)`
   padding-bottom: 5px;
   font-size: ${props => props.size ?? input_font_size}px;
 `;
@@ -61,8 +72,13 @@ export const PuiPressable = styled.Pressable`
   background-color: #${props => props.outline ?? color_primary};
 `;
 
-export const PuiPressableText = styled.Text`
+export const PuiPressableText = styled(BasePuiText)`
   color: #${props => props.outline ? color_primary : color_white};
   font-size: ${props => props.size ?? input_font_size+2}px;
   text-align: center;
 `;
+
+
+
+// Headers
+// Heights and Widths
