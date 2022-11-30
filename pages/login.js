@@ -7,15 +7,11 @@ import {
   InputLabel, PuiPressable, PuiPressableText,
   PuiSafeAreaView } from '../style/global';
 
-export default function Register() {
+export default function Login() {
 
   const [values, setValues] = useState({
-    firstname: '',
-    lastname: '',
-    phone_number: '',
     email: '',
     password: '',
-    confirm_password: '',
   })
 
   const valueChange = (name, val) => setValues({ ...values, [name]: val})
@@ -31,23 +27,8 @@ export default function Register() {
           {/* TODO: keyboardDismissMode, centerContent */}
 
           <Flex horizontal='center' vertical='center' direction='column' >
-            <AuthLogo auth='Register' />
+            <AuthLogo auth='Login' />
           </Flex>
-
-          <InputGroup>
-            <InputLabel>First Name</InputLabel>
-            <InputField placeholder='e.g John' onChangeText={change => valueChange('firstname', change)} />
-          </InputGroup>
-
-          <InputGroup>
-            <InputLabel>Last Name</InputLabel>
-            <InputField placeholder='e.g Doe' onChangeText={change => valueChange('lastname', change)} />
-          </InputGroup>
-
-          <InputGroup>
-            <InputLabel>Phone Number</InputLabel>
-            <InputField placeholder='Local Format e.g 08012345678' keyboardType='number-pad' onChangeText={change => valueChange('phone_number', change)} />
-          </InputGroup>
 
           <InputGroup>
             <InputLabel>Email Address</InputLabel>
@@ -59,17 +40,12 @@ export default function Register() {
             <InputField secureTextEntry={true} textContentType='password' placeholder='********' onChangeText={change => valueChange('password', change)} />
           </InputGroup>
 
-          <InputGroup>
-            <InputLabel>Confirm Password</InputLabel>
-            <InputField secureTextEntry={true} textContentType='password' placeholder='********' onChangeText={change => valueChange('confirm_password', change)} />
-          </InputGroup>
-
           <PuiPressable onPress={handleSubmit} >
-            <PuiPressableText>Register</PuiPressableText>
+            <PuiPressableText>Login</PuiPressableText>
           </PuiPressable>
 
           <Flex horizontal='center' vertical='center' direction='column' >
-            <FootNote auth='register' />
+            <FootNote auth='login' />
           </Flex>
 
         </ScrollView>
