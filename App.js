@@ -1,20 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Container, InputField } from './style/global';
+import { StyleSheet } from 'react-native';
+import Register from './pages/register';
 
 export default function App() {
-  return (
-    <Container>
 
-      <Text>Heyy</Text>
-      <InputField />
+  return (
+    <>
+      <Register />
       <StatusBar style="auto" />
-    </Container>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  scroll: {
   },
 });
