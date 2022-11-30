@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { ScrollView } from 'react-native';
 import { FootNote } from '../components/auths';
-import {AuthLogo} from '../components/auths';
+import { AuthLogo } from '../components/auths';
 import { 
   Container, Flex, InputField, InputGroup,
   InputLabel, PuiPressable, PuiPressableText,
   PuiSafeAreaView } from '../style/global';
 
-export default function Login() {
+export default function Login({ navigation }) {
 
   const [values, setValues] = useState({
     email: '',
@@ -17,7 +17,7 @@ export default function Login() {
   const valueChange = (name, val) => setValues({ ...values, [name]: val})
 
   const handleSubmit =()=>{
-    console.log(values);
+    navigation.navigate('UserStack')
   }
 
   return (
@@ -45,7 +45,7 @@ export default function Login() {
           </PuiPressable>
 
           <Flex horizontal='center' vertical='center' direction='column' >
-            <FootNote auth='login' />
+            <FootNote auth='login' navigation={navigation}/>
           </Flex>
 
         </ScrollView>

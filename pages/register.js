@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { ScrollView } from 'react-native';
 import { FootNote } from '../components/auths';
-import {AuthLogo} from '../components/auths';
+import { AuthLogo } from '../components/auths';
 import { 
   Container, Flex, InputField, InputGroup,
   InputLabel, PuiPressable, PuiPressableText,
   PuiSafeAreaView } from '../style/global';
 
-export default function Register() {
+export default function Register({ navigation }) {
 
   const [values, setValues] = useState({
     firstname: '',
@@ -21,7 +21,7 @@ export default function Register() {
   const valueChange = (name, val) => setValues({ ...values, [name]: val})
 
   const handleSubmit =()=>{
-    console.log(values);
+    navigation.navigate('UserStack')
   }
 
   return (
@@ -69,7 +69,7 @@ export default function Register() {
           </PuiPressable>
 
           <Flex horizontal='center' vertical='center' direction='column' >
-            <FootNote auth='register' />
+            <FootNote auth='register' navigation={navigation}/>
           </Flex>
 
         </ScrollView>

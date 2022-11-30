@@ -1,25 +1,25 @@
 import { Image, Pressable, StyleSheet, Text } from 'react-native';
 
-export function AuthLogo({auth}) {
+export function AuthLogo({ auth }) {
   return (
     <>
       <Image style={styles.image} source={require('../assets/logo-dark.png')} />
-      <Text style={styles.title} > {auth} </Text>
+      <Text style={ styles.title } > {auth} </Text>
     </>
   );
 }
 
-function footnote(which) {
-  if (which == 'register') return 'Login'
-  else return 'Register'
-}
-
-export function FootNote({auth}) {
-  return (
-    <Pressable>
-      <Text style={styles.footnote}> Go to {footnote(auth)} </Text>
+export function FootNote({ navigation, auth }) {
+  if (auth == 'register') return (
+    <Pressable onPress={() => navigation.navigate('login') }>
+      <Text style={styles.footnote}> Go to Login </Text>
     </Pressable>
-  );
+  )
+  else return (
+    <Pressable onPress={() => navigation.navigate('register') }>
+      <Text style={styles.footnote}> New User? Register </Text>
+    </Pressable>
+  )
 }
 
 const styles = StyleSheet.create({
