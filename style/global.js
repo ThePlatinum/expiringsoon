@@ -86,7 +86,7 @@ export const PuiPressable = styled.Pressable`
   color: #${color_primary};
   border: 1px #${color_primary}25 solid;
   border-radius: 5px;
-  background-color: #${props => props.outline ?? color_primary};
+  background-color: #${props => props.outline ? color_white : color_primary};
 `;
 
 export const PuiPressableText = styled(BasePuiText)`
