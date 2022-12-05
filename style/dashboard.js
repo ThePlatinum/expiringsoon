@@ -11,7 +11,7 @@ export const ProfileCard = styled(Card)`
   border-radius: 5px;
   background-color: #${color_primary}50;
   border: 0;
-  padding: 30px;
+  padding: ${props => props.pad ?? 30}px;
 `
 
 export const Stats = styled(Flex)`
@@ -27,4 +27,11 @@ export const MenuItem = styled.Pressable`
   background-color: ${props => props.bg ?? 'black'};
   padding: 10px;
   width: 100%;
+`
+
+export const StatTable = styled(Flex)`
+  padding: 10px 0;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  border-bottom-color: #${color_black}25;
 `

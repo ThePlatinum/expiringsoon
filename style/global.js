@@ -15,6 +15,7 @@ const color_white = 'FFFFFF'
 const BasePuiText = styled.Text`
   font-family: 'merriweather-Light';
   color: ${props => props.color ?? 'black'};
+  opacity: ${props => props.muted ? 0.5 : 1};
 `
 const BasePuiTextInput = styled.TextInput`
   font-family: 'merriweather-Light';
@@ -34,11 +35,8 @@ export const PuiSafeAreaView = styled.SafeAreaView`
 `;
 // TODO: Use device statusbar height in android
 
-// TODO: Use as row and col
-export const Col = styled.View`
-  width: ${props => props.count ? (100/props.count)-1 : 100}%;
-`
 export const Section = styled.View`
+  border-radius: ${props => props.rounded ?? 0}px;
   padding-top: ${props => props.pt ?? 0}px;
   padding-bottom: ${props => props.pb ?? 0}px;
   ${'' /* padding-left: ${props => props.pl ?? 0}px;
@@ -46,6 +44,10 @@ export const Section = styled.View`
 `
 // TODO: What if it was not set at all
 
+// TODO: Use as row and col
+export const Col = styled(Section)`
+  width: ${props => props.count ? (100/props.count)-1 : 100}%;
+`
 // Displays
 export const Flex = styled(Section)`
   display; flex;
@@ -95,7 +97,7 @@ export const PuiPressableText = styled(BasePuiText)`
 
 
 // Components
-export const Card = styled.View`
+export const Card = styled(Section)`
   border: 1px #${color_black}25 solid;
   padding: 15px 10px;
 `;
@@ -105,6 +107,10 @@ export const Badge = styled(BasePuiText)`
   font-size: ${props => props.size ?? input_font_size - 2}px;
   background-color: #${props => props.bg ?? color_primary};
 `;
+export const Seperator = styled.View`
+  padding-top: ${props => props.v ?? 0}px;
+  padding-right: ${props => props.h ?? 0}px;
+`
 
 
 // Fonts
@@ -146,9 +152,6 @@ export const Small = styled(BasePuiText)`
 `
 // ${props => props.forEach(element => { })}
 // TODO: Fetch other props
-
-
-// Heights and Widths
 
 
 // Modal

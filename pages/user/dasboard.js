@@ -2,12 +2,12 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { MenuItem, ProfileCard, Stats } from '../../style/dashboard';
 import { Badge, Col, Container, Flex, H3, H6, P, PuiSafeAreaView, Section, Small } from '../../style/global';
 
-export default function Dashboard() {
+export default function Dashboard({navigation}) {
 
   return (
     <PuiSafeAreaView>
       <Container>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <ProfileCard>
             <Flex horizontal='center' vertical='center' direction='column' gap={5}>
               <Image style={styles.image} source={require('../../assets/avater.jpg')} />
@@ -32,7 +32,7 @@ export default function Dashboard() {
             <P>Menus</P>
             <Flex horizontal='space-between' pt={10}>
               <Col count={4}>
-                <MenuItem bg='#F3070710'>
+                <MenuItem bg='#F3070710' onPress={()=>navigation.navigate('ShopStack')} >
                   <Flex horizontal='center' vertical='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/shop.png')} />
                     <Small>My Shops</Small>
