@@ -23,10 +23,10 @@ export default function Login({ navigation }) {
   return (
     <PuiSafeAreaView>
       <Container>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {/* TODO: keyboardDismissMode, centerContent */}
 
-          <Flex horizontal='center' vertical='center' direction='column' >
+          <Flex h='center' v='center' direction='column' >
             <AuthLogo auth='Login' />
           </Flex>
 
@@ -44,7 +44,7 @@ export default function Login({ navigation }) {
             <PuiPressableText>Login</PuiPressableText>
           </PuiPressable>
 
-          <Flex horizontal='center' vertical='center' direction='column' >
+          <Flex h='center' v='center' direction='column' >
             <FootNote auth='login' navigation={navigation}/>
           </Flex>
 

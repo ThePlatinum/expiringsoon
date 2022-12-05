@@ -9,7 +9,7 @@ export default function Dashboard({ navigation }) {
       <Container>
         <ScrollView showsVerticalScrollIndicator={false}>
           <ProfileCard>
-            <Flex horizontal='center' vertical='center' direction='column' gap={5}>
+            <Flex h='center' v='center' direction='column' gap={5}>
               <Image style={styles.image} source={require('../../assets/avater.jpg')} />
               <P size={12}>Welcome</P>
               <H3 size={30}>Emmanuel Adesina</H3>
@@ -30,10 +30,10 @@ export default function Dashboard({ navigation }) {
 
           <Section pt={20}>
             <P>Menus</P>
-            <Flex horizontal='space-between' pt={10}>
+            <Flex h='space-between' pt={10}>
               <Col count={4}>
-                <MenuItem bg='#F3070710' onPress={() => navigation.navigate('ShopStack')} >
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                <MenuItem bg='#F3070710' onPress={() => navigation.navigate('shop_list')} >
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/shop.png')} />
                     <Small>My Shops</Small>
                   </Flex>
@@ -42,7 +42,7 @@ export default function Dashboard({ navigation }) {
 
               <Col count={4}>
                 <MenuItem bg='#00B20710'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/transactions.png')} />
                     <Small>Deals</Small>
                   </Flex>
@@ -51,7 +51,7 @@ export default function Dashboard({ navigation }) {
 
               <Col count={4}>
                 <MenuItem bg='#00000010'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/adverts.png')} />
                     <Small>Adverts</Small>
                   </Flex>
@@ -60,7 +60,7 @@ export default function Dashboard({ navigation }) {
 
               <Col count={4}>
                 <MenuItem bg='#F3070710'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/profile.png')} />
                     <Small>Profile</Small>
                   </Flex>

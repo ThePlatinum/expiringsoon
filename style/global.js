@@ -51,8 +51,8 @@ export const Col = styled(Section)`
 // Displays
 export const Flex = styled(Section)`
   display; flex;
-  justify-content: ${props => props.horizontal ?? 'flex-start'};
-  align-items: ${props => props.vertical ?? 'flex-start'};
+  justify-content: ${props => props.h ?? 'flex-start'};
+  align-items: ${props => props.v ?? 'flex-start'};
   flex-direction: ${props => props.direction ?? 'row'};
   gap: ${props => props.gap ?? 0}px;
   flex-wrap: ${props => props.wrap ?? 'nowrap'};

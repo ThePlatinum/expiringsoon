@@ -9,7 +9,7 @@ export default function Dashboard() {
       <Container>
         <ScrollView showsVerticalScrollIndicator={false}>
           <ProfileCard pad={0} >
-            <Flex vertical='center'>
+            <Flex v='center'>
               <Image style={styles.image} source={require('../../assets/btn-icons/shop.png')} />
               <Section>
                 <P size={14} color='#00B207' >Shop Dashoard</P>
@@ -36,10 +36,10 @@ export default function Dashboard() {
 
           <Section pt={20}>
             <P>Menus</P>
-            <Flex horizontal='space-between' pt={10} wrap='wrap'>
+            <Flex h='space-between' pt={10} wrap='wrap'>
               <Col count={4}>
                 <MenuItem bg='#F3070710'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/shop.png')} />
                     <Small>Products</Small>
                   </Flex>
@@ -48,7 +48,7 @@ export default function Dashboard() {
 
               <Col count={4}>
                 <MenuItem bg='#00B20710'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/transactions.png')} />
                     <Small>Orders</Small>
                   </Flex>
@@ -57,7 +57,7 @@ export default function Dashboard() {
 
               <Col count={4}>
                 <MenuItem bg='#00000010'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/adverts.png')} />
                     <Small>Settings</Small>
                   </Flex>
@@ -66,7 +66,7 @@ export default function Dashboard() {
 
               <Col count={4}>
                 <MenuItem bg='#F3070710'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/profile.png')} />
                     <Small>News</Small>
                   </Flex>
@@ -75,7 +75,7 @@ export default function Dashboard() {
 
               <Col count={4} pt={4}>
                 <MenuItem bg='#00B20710'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/profile.png')} />
                     <Small>Earnings</Small>
                   </Flex>
@@ -84,7 +84,7 @@ export default function Dashboard() {
 
               <Col count={4} pt={4}>
                 <MenuItem bg='#00000010'>
-                  <Flex horizontal='center' vertical='center' direction='column'>
+                  <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/profile.png')} />
                     <Small>Payouts</Small>
                   </Flex>

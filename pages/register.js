@@ -27,10 +27,10 @@ export default function Register({ navigation }) {
   return (
     <PuiSafeAreaView>
       <Container>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {/* TODO: keyboardDismissMode, centerContent */}
 
-          <Flex horizontal='center' vertical='center' direction='column' >
+          <Flex h='center' v='center' direction='column' >
             <AuthLogo auth='Register' />
           </Flex>
 
@@ -68,7 +68,7 @@ export default function Register({ navigation }) {
             <PuiPressableText>Register</PuiPressableText>
           </PuiPressable>
 
-          <Flex horizontal='center' vertical='center' direction='column' >
+          <Flex h='center' v='center' direction='column' >
             <FootNote auth='register' navigation={navigation}/>
           </Flex>
 
