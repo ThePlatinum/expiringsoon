@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { ScrollView } from 'react-native';
 import { FootNote } from '../components/auths';
 import { AuthLogo } from '../components/auths';
-import { 
+import {
   Container, Flex, InputField, InputGroup,
   InputLabel, PuiPressable, PuiPressableText,
-  PuiSafeAreaView } from '../style/global';
+  PuiSafeAreaView, Seperator } from '../style/global';
 
 export default function Login({ navigation }) {
 
@@ -14,9 +14,9 @@ export default function Login({ navigation }) {
     password: '',
   })
 
-  const valueChange = (name, val) => setValues({ ...values, [name]: val})
+  const valueChange = (name, val) => setValues({ ...values, [name]: val })
 
-  const handleSubmit =()=>{
+  const handleSubmit = () => {
     navigation.navigate('UserStack')
   }
 
@@ -25,6 +25,8 @@ export default function Login({ navigation }) {
       <Container>
         <ScrollView showsVerticalScrollIndicator={false}>
           {/* TODO: keyboardDismissMode, centerContent */}
+
+          <Seperator v={100} />
 
           <Flex h='center' v='center' direction='column' >
             <AuthLogo auth='Login' />
@@ -45,8 +47,10 @@ export default function Login({ navigation }) {
           </PuiPressable>
 
           <Flex h='center' v='center' direction='column' >
-            <FootNote auth='login' navigation={navigation}/>
+            <FootNote auth='login' navigation={navigation} />
           </Flex>
+
+          <Seperator v={100} />
 
         </ScrollView>
       </Container>

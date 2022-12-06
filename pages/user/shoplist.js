@@ -78,6 +78,7 @@ export default function ShopList({ navigation }) {
           data={Shops}
           renderItem={({ item }) => <ShopView shop={item} />}
           keyExtractor={shop => shop.id}
+          showsVerticalScrollIndicator={false}
         />
 
         <PuiPressable>

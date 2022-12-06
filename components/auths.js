@@ -24,7 +24,7 @@ export function FootNote({ navigation, auth }) {
 
 const styles = StyleSheet.create({
   image: {
-    height: 60,
+    height: 50,
     resizeMode: 'contain',
     marginTop: 10,
     marginBottom: 40,

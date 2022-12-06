@@ -1,30 +1,30 @@
 import { Pressable, StyleSheet } from 'react-native';
-import { Flex, H5, Section } from '../style/global';
+import { Flex, H5 } from '../style/global';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function Header({ navigation, name, options }) {
 
   return (
-    <Pressable onPress={()=>navigation.goBack(null)}>
-      <Flex style={styles.header} h='space-between'>
-        <Flex v='center'>
+    <Flex style={styles.header} h='space-between'>
+      <Flex v='center'>
+        <Pressable onPress={() => navigation.goBack(null)}>
           <MaterialCommunityIcons name='arrow-left' style={styles.back} size={20} />
-          <H5 style={styles.title} >{name}</H5>
-        </Flex>
-        {options ??
-          <Pressable>
-            <MaterialCommunityIcons name='dots-vertical' style={styles.options} size={20} />
-          </Pressable>
-        }
+        </Pressable>
+        <H5 style={styles.title} >{name}</H5>
       </Flex>
-    </Pressable>
+      {options ?
+        <Pressable>
+          <MaterialCommunityIcons name='dots-vertical' style={styles.options} size={20} />
+        </Pressable>
+        : ''}
+    </Flex>
   );
 }
 
 const styles = StyleSheet.create({
   back: {
     marginRight: 10,
-    padding: 10,
+    padding: 8,
     borderRadius: 500,
     backgroundColor: '#00B20725',
     borderWidth: 1,

@@ -17,7 +17,6 @@ export default function App() {
           'merriweather-Light': require('./assets/fonts/Merriweather-Light.ttf'),
           'merriweather-LightItalic': require('./assets/fonts/Merriweather-LightItalic.ttf'),
           'merriweather': require('./assets/fonts/Merriweather-Regular.ttf'),
-          // 'Ionicons': require('./node_modules/react-native-ionicons/fonts/Ionicons.ttf')
         })
       } catch (e) {
         console.log('e: ', e);
