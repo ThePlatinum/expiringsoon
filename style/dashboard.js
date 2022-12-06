@@ -11,7 +11,6 @@ export const ProfileCard = styled(Card)`
   border-radius: 5px;
   background-color: #${color_primary}50;
   border: 0;
-  padding: ${props => props.pad ?? 30}px;
 `
 
 export const Stats = styled(Flex)`

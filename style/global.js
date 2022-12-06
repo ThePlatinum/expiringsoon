@@ -99,7 +99,7 @@ export const PuiPressableText = styled(BasePuiText)`
 // Components
 export const Card = styled(Section)`
   border: 1px #${color_black}25 solid;
-  padding: 15px 10px;
+  padding: ${props => props.pad ?? 10}px;
 `;
 export const Badge = styled(BasePuiText)`
   border-radius: 20px;
