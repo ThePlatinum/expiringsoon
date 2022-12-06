@@ -81,7 +81,7 @@ export const InputGroup = styled.View`
 
 // Buttons
 export const PuiPressable = styled.Pressable`
-  padding: 10px;
+  padding: 10px 15px;
   margin: 10px 0;
   color: #${color_primary};
   border: 1px #${color_primary}25 solid;
@@ -98,7 +98,7 @@ export const PuiPressableText = styled(BasePuiText)`
 
 // Components
 export const Card = styled(Section)`
-  border: 1px #${color_black}25 solid;
+  border: ${props => props.borderless ? 0 : 1}px #${color_black}25 solid;
   padding: ${props => props.pad ?? 10}px;
 `;
 export const Badge = styled(BasePuiText)`

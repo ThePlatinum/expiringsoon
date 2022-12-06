@@ -81,7 +81,7 @@ export default function ShopList({ navigation }) {
           showsVerticalScrollIndicator={false}
         />
 
-        <PuiPressable>
+        <PuiPressable onPress={() => navigation.navigate('add_shop')}>
           <PuiPressableText >Create New Shop</PuiPressableText>
         </PuiPressable>
 
