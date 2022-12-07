@@ -1,6 +1,7 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet } from 'react-native';
 import { MenuItem, ProfileCard, Stats, StatTable } from '../../style/dashboard';
 import { Badge, Card, Col, Container, Flex, H3, H5, H6, P, PuiPressable, PuiPressableText, PuiSafeAreaView, Section, Seperator, Small } from '../../style/global';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function Dashboard({ navigation }) {
 
@@ -8,13 +9,16 @@ export default function Dashboard({ navigation }) {
     <PuiSafeAreaView>
       <Container>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <ProfileCard>
+          <ProfileCard pad={25} style={styles.relative} >
             <Flex h='center' v='center' direction='column' gap={5}>
               <Image style={styles.image} source={require('../../assets/avater.jpg')} />
               <P size={12}>Welcome</P>
               <H3 size={30}>Emmanuel Adesina</H3>
               <Badge size={12} color='white' >Business Plan</Badge>
             </Flex>
+            <Pressable onPress={() => navigation.navigate('notifications')} style={styles.absolute}>
+              <MaterialCommunityIcons name='bell' style={styles.icon} size={24} />
+            </Pressable>
           </ProfileCard>
 
           <Section pt={10}>
@@ -50,7 +54,7 @@ export default function Dashboard({ navigation }) {
               </Col>
 
               <Col count={4}>
-                <MenuItem bg='#00000010'>
+                <MenuItem bg='#00000010' onPress={() => navigation.navigate('adverts')}>
                   <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/adverts.png')} />
                     <Small>Adverts</Small>
@@ -59,7 +63,7 @@ export default function Dashboard({ navigation }) {
               </Col>
 
               <Col count={4}>
-                <MenuItem bg='#F3070710'>
+                <MenuItem bg='#F3070710' onPress={() => navigation.navigate('profile')}>
                   <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/profile.png')} />
                     <Small>Profile</Small>
@@ -84,7 +88,7 @@ export default function Dashboard({ navigation }) {
                 </StatTable>
               </Section>
               <Flex>
-                <PuiPressable outline>
+                <PuiPressable outline onPress={() => navigation.navigate('subscriptions')}>
                   <PuiPressableText outline size={14}>Subscribe</PuiPressableText>
                 </PuiPressable>
               </Flex>
@@ -111,5 +115,19 @@ const styles = StyleSheet.create({
     width: 45,
     resizeMode: 'contain',
     marginBottom: 10,
+  },
+  relative: {
+    position: 'relative',
+  },
+  absolute: {
+    borderRadius: 500,
+    position: 'absolute',
+    right: 20,
+    top: 20,
+  },
+  icon: {
+    padding: 8,
+    backgroundColor: '#F3070705',
+    borderRadius: 500,
   },
 });
