@@ -8,6 +8,7 @@ import Profile from '../pages/user/profile';
 import Subscriptions from '../pages/user/subscribtion';
 import Adverts from '../pages/user/adverts';
 import Notifications from '../pages/user/notifications';
+import AddShop from '../pages/shop/addshop';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const UserStack = () => {
       <Stack.Screen name="adverts" component={Adverts} />
 
       <Stack.Screen name="shop_list" component={ShopList} />
+      <Stack.Screen name="add_shop" component={AddShop} />
       <Stack.Screen name="ShopStack" component={ShopStack} />
     </Stack.Navigator>
   );

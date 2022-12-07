@@ -1,8 +1,11 @@
+import { StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 
 // Consts
 const input_font_size = 16
 const p_font_size = 14;
+// TODO: Check Platform first
+const statusbar_height = StatusBar.currentHeight + 1
 
 // Colors
 const color_primary = '00B207'
@@ -32,7 +35,7 @@ export const Container = styled.View`
 
 export const PuiSafeAreaView = styled.SafeAreaView`
   height: 100%;
-  padding-top: 25px;
+  padding-top: ${statusbar_height}px;
 `;
 // TODO: Use device statusbar height in android
 
