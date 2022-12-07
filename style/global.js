@@ -6,6 +6,7 @@ const p_font_size = 14;
 
 // Colors
 const color_primary = '00B207'
+color_primary_light = '00B20725'
 const color_secondary = 'F51515'
 const color_black = '000000'
 const color_white = 'FFFFFF'
@@ -62,7 +63,7 @@ export const Flex = styled(Section)`
 
 // Form and Inputs
 export const InputField = styled(BasePuiTextInput)`
-  border: 1px #${color_primary}25 solid;
+  border: 1px #${props => props.border ?? color_primary_light} solid;
   border-radius: 5px;
   width: 100%;
   padding: 10px;

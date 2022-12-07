@@ -41,7 +41,7 @@ export default function Dashboard({ navigation }) {
               </Col>
 
               <Col count={4}>
-                <MenuItem bg='#00B20710'>
+                <MenuItem bg='#00B20710' onPress={() => navigation.navigate('transactions')}>
                   <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/transactions.png')} />
                     <Small>Deals</Small>

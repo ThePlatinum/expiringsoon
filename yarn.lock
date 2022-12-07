@@ -5420,6 +5420,11 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-datatable-component@^2.1.12:
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/react-native-datatable-component/-/react-native-datatable-component-2.1.12.tgz#a4c9ebce3fcaaf12bdcda558fdd6738273881b75"
+  integrity sha512-ydsUU1t2zleasFy1k4jPXkm47wM9Tiv9P8LgkqwYBUfRD5/hB/Di26+Di1M5TdNnwaU/ss2p5tSbNHTCI0WdTw==
+
 react-native-gradle-plugin@^0.70.3:
   version "0.70.3"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"

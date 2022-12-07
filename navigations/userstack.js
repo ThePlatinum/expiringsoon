@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ShopStack from './shopstack';
-import ShopList from '../pages/user/shoplist';
 import Dashboard from '../pages/user/dasboard';
-import AddShop from '../pages/shop/addshop';
+import Transactions from '../pages/user/transactions';
+import ShopList from '../pages/shop/shoplist';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +13,7 @@ const UserStack = () => {
       initialRouteName='Dashboard'
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Dashboard" component={Dashboard} />
-      <Stack.Screen name="add_shop" component={AddShop} />
+      <Stack.Screen name="transactions" component={Transactions} />
       <Stack.Screen name="shop_list" component={ShopList} />
       <Stack.Screen name="ShopStack" component={ShopStack} />
     </Stack.Navigator>
