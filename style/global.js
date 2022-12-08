@@ -1,15 +1,14 @@
-import { StatusBar } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 
 // Consts
 const input_font_size = 16
 const p_font_size = 14;
-// TODO: Check Platform first
-const statusbar_height = StatusBar.currentHeight + 1
+const statusbar_height = (Platform.OS == 'android' ? StatusBar.currentHeight : 0) + 1
 
 // Colors
 const color_primary = '00B207'
-color_primary_light = '00B20725'
+const color_primary_light = '00B20725'
 const color_secondary = 'F51515'
 const color_black = '000000'
 const color_white = 'FFFFFF'

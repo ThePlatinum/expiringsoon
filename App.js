@@ -3,6 +3,7 @@ import * as Font from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './navigations/authstack';
+import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,6 +39,7 @@ export default function App() {
   return (
     <NavigationContainer >
       <AuthStack />
+      <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
