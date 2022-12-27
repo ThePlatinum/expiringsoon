@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './navigations/authstack';
 import { StatusBar } from 'expo-status-bar';
+import Profile from './pages/user/profile';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,7 +39,8 @@ export default function App() {
 
   return (
     <NavigationContainer >
-      <AuthStack />
+      {/* <AuthStack /> */}
+      <Profile />
       <StatusBar style="auto" />
     </NavigationContainer>
   );

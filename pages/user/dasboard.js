@@ -95,7 +95,7 @@ export default function Dashboard({ navigation }) {
             </Card>
           </Section>
 
-          <Seperator v={15} />
+          <Seperator v={20} />
         </ScrollView>
       </Container>
     </PuiSafeAreaView>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   relative: {
-    position: 'relative',
+    position: 'relative'
   },
   absolute: {
     borderRadius: 500,
@@ -130,4 +130,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3070705',
     borderRadius: 500,
   },
+  card: {
+    shadowOffset: {
+      width: 100,
+      height: 100,
+    },
+    shadowColor: 'gray',
+  }
 });

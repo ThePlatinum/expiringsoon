@@ -8,7 +8,7 @@ const statusbar_height = (Platform.OS == 'android' ? StatusBar.currentHeight : 0
 
 // Colors
 const color_primary = '00B207'
-const color_primary_light = '00B20725'
+const color_primary_light = '00B20750'
 const color_secondary = 'F51515'
 const color_black = '000000'
 const color_white = 'FFFFFF'
@@ -66,7 +66,7 @@ export const Flex = styled(Section)`
 // Form and Inputs
 export const InputField = styled(BasePuiTextInput)`
   border: 1px #${props => props.border ?? color_primary_light} solid;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   padding: 10px;
   font-size: ${props => props.size ?? input_font_size}px;
@@ -74,11 +74,13 @@ export const InputField = styled(BasePuiTextInput)`
 
 export const InputLabel = styled(BasePuiText)`
   padding-bottom: 5px;
-  font-size: ${props => props.size ?? input_font_size}px;
+  font-size: ${props => props.size ?? input_font_size-1}px;
 `;
 
 export const InputGroup = styled.View`
-  padding-bottom: 20px;
+  margin-top: ${props => props.top ?? 17}px;
+  margin-bottom: ${props => props.bottom ?? 0}px;
+  flex: 1;
 `;
 
 
@@ -88,7 +90,7 @@ export const PuiPressable = styled.Pressable`
   margin: 10px 0;
   color: #${color_primary};
   border: 1px #${color_primary}25 solid;
-  border-radius: 5px;
+  border-radius: ${props => props.radius ?? 5}px;
   background-color: #${props => props.outline ? color_white : color_primary};
 `;
 
@@ -102,7 +104,8 @@ export const PuiPressableText = styled(BasePuiText)`
 // Components
 export const Card = styled(Section)`
   border: ${props => props.borderless ? 0 : 1}px #${color_black}25 solid;
-  padding: ${props => props.pad ?? 10}px;
+  padding: ${props => props.pad ?? 15}px;
+  border-radius: ${props => props.radius ?? 10}px;
 `;
 export const Badge = styled(BasePuiText)`
   border-radius: 20px;
