@@ -2,7 +2,7 @@ import { Image, ScrollView, StyleSheet, } from 'react-native';
 import { MenuItem, ProfileCard, Stats, StatTable } from '../../style/dashboard';
 import { Card, Col, Container, Flex, H3, H6, P, PuiSafeAreaView, Section, Seperator, Small } from '../../style/global';
 
-export default function Dashboard() {
+export default function Dashboard({ navigation })  {
 
   return (
     <PuiSafeAreaView>
@@ -38,7 +38,7 @@ export default function Dashboard() {
             <P>Menus</P>
             <Flex h='space-between' pt={10} wrap='wrap'>
               <Col count={4}>
-                <MenuItem bg='#F3070710'>
+                <MenuItem bg='#F3070710' onPress={() => navigation.navigate('products')}>
                   <Flex h='center' v='center' direction='column'>
                     <Image style={styles.btn_icon} source={require('../../assets/btn-icons/shop.png')} />
                     <Small>Products</Small>

@@ -3,11 +3,12 @@ import { ScrollView, StyleSheet, Image } from 'react-native';
 import Header from '../../components/header';
 import { Card, Container, Flex, H5, InputField, InputGroup, InputLabel, PuiPressable, PuiPressableText, PuiSafeAreaView, Seperator } from '../../style/global';
 import * as ImagePicker from "expo-image-picker";
+import placeholder from '../../assets/avater.jpg'
 
 export default function Profile({ navigation }) {
 
   const [values, setValues] = useState({})
-  const [image, setImage] = useState('../../assets/avater.jpg')
+  const [image, setImage] = useState(Image.resolveAssetSource(placeholder).uri)
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library  require()
@@ -20,7 +21,6 @@ export default function Profile({ navigation }) {
     
     if (!result.canceled) {
       setImage(result.assets[0].uri);
-      console.log('result.assets[0].uri: ', result.assets[0].uri);
     }
   }
 
