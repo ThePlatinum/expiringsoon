@@ -5,7 +5,10 @@ import { AuthLogo } from '../components/auths';
 import {
   Container, Flex, InputField, InputGroup,
   InputLabel, PuiPressable, PuiPressableText,
-  PuiSafeAreaView, Seperator } from '../style/global';
+  PuiSafeAreaView, Seperator
+} from '../style/global';
+import axios from '../utils/axios';
+import securestore from '../utils/securestore';
 
 export default function Login({ navigation }) {
 
@@ -16,8 +19,15 @@ export default function Login({ navigation }) {
 
   const valueChange = (name, val) => setValues({ ...values, [name]: val })
 
-  const handleSubmit = () => {
-    navigation.navigate('UserStack')
+  const handleSubmit = async () => {
+    await axios.post('re-issue-token', values)
+      .then(response => {
+        if (response.data.status) {
+          securestore.save('user_session', response.data.token)
+          navigation.navigate('UserStack')
+        }
+      })
+      .catch(error => console.error('error: ', error));
   }
 
   return (

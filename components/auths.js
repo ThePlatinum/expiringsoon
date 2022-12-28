@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { Image, Pressable, StyleSheet, Text } from 'react-native';
+import * as SecureStore from 'expo-secure-store';
 
 export function AuthLogo({ auth }) {
   return (
@@ -10,6 +12,15 @@ export function AuthLogo({ auth }) {
 }
 
 export function FootNote({ navigation, auth }) {
+
+  useEffect(() => {
+    async function run() {
+      const session = await SecureStore.getItemAsync("user_session");
+      if (session) navigation.navigate('UserStack')
+    }
+    run()
+  }, [])
+  
   if (auth == 'register') return (
     <Pressable onPress={() => navigation.navigate('login') }>
       <Text style={styles.footnote}> Go to Login </Text>
