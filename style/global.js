@@ -7,7 +7,7 @@ const p_font_size = 14;
 const statusbar_height = (Platform.OS == 'android' ? StatusBar.currentHeight : 0) + 1
 
 // Colors
-const color_primary = '00B207'
+export const color_primary = '00B207'
 const color_primary_light = '00B20750'
 const color_secondary = 'F51515'
 const color_black = '000000'
