@@ -27,7 +27,8 @@ const BasePuiTextInput = styled.TextInput`
 // Layout
 export const Container = styled.View`
   flex: 1;
-  background-color: #fff;
+  background-color: #FFF;
+  ${'' /* background-color: #CCC2; */}
   padding-left: 10px;
   padding-right: 10px;
 `;
@@ -40,6 +41,7 @@ export const PuiSafeAreaView = styled.SafeAreaView`
 
 export const Section = styled.View`
   border-radius: ${props => props.rounded ?? 0}px;
+  ${'' /* background-color: ${props => props.bg ?? '#FFF'}; */}
   padding-top: ${props => props.pt ?? 0}px;
   padding-bottom: ${props => props.pb ?? 0}px;
   ${'' /* padding-left: ${props => props.pl ?? 0}px;
@@ -75,7 +77,7 @@ export const InputField = styled(BasePuiTextInput)`
 
 export const InputLabel = styled(BasePuiText)`
   padding-bottom: 5px;
-  font-size: ${props => props.size ?? input_font_size-1}px;
+  font-size: ${props => props.size ?? input_font_size-2}px;
 `;
 
 export const InputGroup = styled.View`

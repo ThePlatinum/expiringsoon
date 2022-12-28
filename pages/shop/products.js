@@ -1,6 +1,10 @@
 import { ScrollView, Image } from 'react-native';
 import Header from '../../components/header';
-import { Card, Col, Container, Flex, H5, H6, InputField, P, PuiSafeAreaView, Section, Seperator } from '../../style/global';
+import {
+  Card, Col, Container, Flex, H5, H6,
+  InputField, P, PuiSafeAreaView, Section,
+  Seperator, PuiPressable, PuiPressableText
+} from '../../style/global';
 
 export default function Products({ navigation }) {
   const products = [
@@ -60,13 +64,21 @@ export default function Products({ navigation }) {
     }
   ];
 
+  const addproduct = ()=> navigation.navigate('add_product')
+
   return (
     <PuiSafeAreaView>
       <Container>
         <Header name='Products' navigation={navigation} />
-        <Section pt={10} pb={15} >
+        <Section pt={10} pb={10} >
           <InputField border='0005' placeholder='search' />
         </Section>
+
+        <Flex v='center' h='flex-end' >
+          <PuiPressable onPress={addproduct}>
+            <PuiPressableText size={15}>Add New Product</PuiPressableText>
+          </PuiPressable>
+        </Flex>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Flex h='space-between' pt={10} wrap >

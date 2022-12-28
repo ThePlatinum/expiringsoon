@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet } from 'react-native';
-import { Flex, H5 } from '../style/global';
+import { Flex, H6 } from '../style/global';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function Header({ navigation, name, options }) {
@@ -8,15 +8,14 @@ export default function Header({ navigation, name, options }) {
     <Flex style={styles.header} h='space-between'>
       <Flex v='center'>
         <Pressable onPress={() => navigation.goBack(null)}>
-          <MaterialCommunityIcons name='arrow-left' style={styles.back} size={20} />
+          <MaterialCommunityIcons name='arrow-left' style={styles.back} size={18} />
         </Pressable>
-        <H5 style={styles.title} >{name}</H5>
+        <H6 style={styles.title} >{name}</H6>
       </Flex>
-      {options ?
+      {options &&
         <Pressable>
           <MaterialCommunityIcons name='dots-vertical' style={styles.options} size={20} />
-        </Pressable>
-        : ''}
+        </Pressable>}
     </Flex>
   );
 }
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   header: {
-    marginBottom: 5,
+    marginBottom: 10,
     marginTop: 5,
   },
   options: {
