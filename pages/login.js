@@ -24,14 +24,14 @@ export default function Login({ navigation }) {
   const handleSubmit = async () => {
     setLoading(true)
     await axios.post('re-issue-token', values)
-      .then(response => {
-        if (response.data.status) {
-          securestore.save('user_session', response.data.token)
+      .then(res => {
+        if (res.data.status) {
+          securestore.save('user_session', res.data.token)
           navigation.navigate('UserStack')
           setLoading(false)
         }
       })
-      .catch(error => setLoading(false));
+      .catch(e => setLoading(false));
   }
 
   return (

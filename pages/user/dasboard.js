@@ -1,9 +1,15 @@
-import { Image, Pressable, ScrollView, StyleSheet } from 'react-native';
+import { BackHandler, Image, Pressable, ScrollView, StyleSheet } from 'react-native';
 import { MenuItem, ProfileCard, Stats, StatTable } from '../../style/dashboard';
 import { Badge, Card, Col, Container, Flex, H3, H5, H6, P, PuiPressable, PuiPressableText, PuiSafeAreaView, Section, Seperator, Small } from '../../style/global';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useEffect } from 'react';
 
 export default function Dashboard({ navigation }) {
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => true)
+    return () => backHandler.remove()
+  }, [])
 
   return (
     <PuiSafeAreaView>
