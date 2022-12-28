@@ -27,10 +27,9 @@ const BasePuiTextInput = styled.TextInput`
 // Layout
 export const Container = styled.View`
   flex: 1;
-  background-color: #FFF;
-  ${'' /* background-color: #CCC2; */}
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: ${props => props.bg ?? '#CCC2'};
+  padding-left: ${props => props.pl ?? 10}px;
+  padding-right: ${props => props.pr ?? 10}px;
 `;
 
 export const PuiSafeAreaView = styled.SafeAreaView`
@@ -41,11 +40,9 @@ export const PuiSafeAreaView = styled.SafeAreaView`
 
 export const Section = styled.View`
   border-radius: ${props => props.rounded ?? 0}px;
-  ${'' /* background-color: ${props => props.bg ?? '#FFF'}; */}
+  background-color: ${props => props.bg ?? 'transparent'};
   padding-top: ${props => props.pt ?? 0}px;
   padding-bottom: ${props => props.pb ?? 0}px;
-  ${'' /* padding-left: ${props => props.pl ?? 0}px;
-  padding-right: ${props => props.pr ?? 0}px; */}
 `
 // TODO: What if it was not set at all
 
@@ -109,6 +106,7 @@ export const Card = styled(Section)`
   border: ${props => props.borderless ? 0 : 1}px #${color_black}25 solid;
   padding: ${props => props.pad ?? 15}px;
   border-radius: ${props => props.radius ?? 10}px;
+  background-color: ${props => props.bg ?? 'white'};
 `;
 export const Badge = styled(BasePuiText)`
   border-radius: 20px;

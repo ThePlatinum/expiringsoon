@@ -8,7 +8,7 @@ export default function Dashboard({ navigation })  {
     <PuiSafeAreaView>
       <Container>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <ProfileCard pad={10} >
+          <ProfileCard pad={15} >
             <Flex v='center'>
               <Image style={styles.image} source={require('../../assets/btn-icons/shop.png')} />
               <Section>
@@ -143,9 +143,9 @@ export default function Dashboard({ navigation })  {
 
 const styles = StyleSheet.create({
   image: {
-    height: 100,
+    height: 120,
     resizeMode: 'contain',
-    width: 100,
+    width: 120,
     backgroundColor: '#F3070710',
     marginRight: 10,
     borderRadius: 500,

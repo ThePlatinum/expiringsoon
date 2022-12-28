@@ -16,7 +16,7 @@ export const ShopListCard = styled(Section)`
   border-right-width: 2px;
   padding: 0px;
   margin-top: 10px;
-  elevation: 0.2;
+  elevation: 0.1;
 `
 
 export const InputText = styled.Text`

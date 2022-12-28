@@ -22,7 +22,7 @@ export default function Login({ navigation }) {
 
   return (
     <PuiSafeAreaView>
-      <Container>
+      <Container pr={30} pl={30} bg={'#FFF'}>
         <ScrollView showsVerticalScrollIndicator={false}>
           {/* TODO: keyboardDismissMode, centerContent */}
 
@@ -41,6 +41,8 @@ export default function Login({ navigation }) {
             <InputLabel>Password</InputLabel>
             <InputField secureTextEntry={true} textContentType='password' placeholder='********' onChangeText={change => valueChange('password', change)} />
           </InputGroup>
+
+          <Seperator v={20} />
 
           <PuiPressable onPress={handleSubmit} >
             <PuiPressableText>Login</PuiPressableText>

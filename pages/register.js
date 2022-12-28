@@ -5,7 +5,8 @@ import { AuthLogo } from '../components/auths';
 import { 
   Container, Flex, InputField, InputGroup,
   InputLabel, PuiPressable, PuiPressableText,
-  PuiSafeAreaView } from '../style/global';
+  PuiSafeAreaView, 
+  Seperator} from '../style/global';
 
 export default function Register({ navigation }) {
 
@@ -26,7 +27,7 @@ export default function Register({ navigation }) {
 
   return (
     <PuiSafeAreaView>
-      <Container>
+      <Container pr={30} pl={30} bg={'#FFF'}>
         <ScrollView showsVerticalScrollIndicator={false}>
           {/* TODO: keyboardDismissMode, centerContent */}
 
@@ -63,6 +64,8 @@ export default function Register({ navigation }) {
             <InputLabel>Confirm Password</InputLabel>
             <InputField secureTextEntry={true} textContentType='password' placeholder='********' onChangeText={change => valueChange('confirm_password', change)} />
           </InputGroup>
+
+          <Seperator v={20} />
 
           <PuiPressable onPress={handleSubmit} >
             <PuiPressableText>Register</PuiPressableText>

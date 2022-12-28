@@ -9,6 +9,7 @@ export default function Transactions({ navigation }) {
   const [transactions, setTransactions] = useState([
     { id: 'TP00271', date: '02/12/2022', amount: 12000, status: 'completed' },
     { id: 'TP00268', date: '01/12/2022', amount: 1000, status: 'failed' },
+    { id: 'TP00271', date: '02/12/2022', amount: 12000, status: 'completed' },
   ])
 
   return (
@@ -27,8 +28,8 @@ export default function Transactions({ navigation }) {
           //   { name: 'date', type: COL_TYPES.STRING, width: '30%' },
           //   { name: 'status', type: COL_TYPES.STRING, width: '30%' }
           // ]}
-          noOfPages={1}
-          // backgroundColor={'#EFF7'}
+          noOfPages={transactions.length > 15 ? Math.floor(transactions.length/15) : 1}
+          backgroundColor={'white'}
           headerLabelStyle={{ color: 'grey', fontSize: 14 }}
         />
         <Seperator v={10} />
@@ -36,29 +37,3 @@ export default function Transactions({ navigation }) {
     </PuiSafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  image: {
-    height: 120,
-    resizeMode: 'contain',
-    width: 120,
-    backgroundColor: '#F3070710',
-    marginRight: 15,
-    borderRadius: 5,
-  },
-  select: {
-    padding: 8,
-    backgroundColor: '#F3070705',
-    // borderWidth: 1,
-    borderRadius: 500,
-  },
-  list: {
-    position: 'relative',
-  },
-  absolute: {
-    borderRadius: 500,
-    position: 'absolute',
-    right: 8,
-    top: 8,
-  },
-});

@@ -53,7 +53,7 @@ export default function ShopList({ navigation }) {
 
   const ShopView = ({ shop }) => {
     return (
-      <ShopListCard>
+      <ShopListCard rounded={1}>
         <Flex v='center' style={styles.list} >
           <Image style={styles.image} source={require('../../assets/btn-icons/shop.png')} />
           <Section>
@@ -82,10 +82,8 @@ export default function ShopList({ navigation }) {
         />
 
         <PuiPressable onPress={() => navigation.navigate('add_shop')}>
-          <PuiPressableText >Create New Shop</PuiPressableText>
+          <PuiPressableText>Create New Shop</PuiPressableText>
         </PuiPressable>
-
-        <Seperator v={5} />
       </Container>
     </PuiSafeAreaView>
   );
