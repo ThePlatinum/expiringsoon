@@ -50,6 +50,7 @@ export const Section = styled.View`
 // TODO: Use as row and col
 export const Col = styled(Section)`
   width: ${props => props.count ? (100/props.count)-1 : 100}%;
+  padding-bottom: ${props => props.pb ?? 0}px;
 `
 // Displays
 export const Flex = styled(Section)`
@@ -58,7 +59,7 @@ export const Flex = styled(Section)`
   align-items: ${props => props.v ?? 'flex-start'};
   flex-direction: ${props => props.direction ?? 'row'};
   gap: ${props => props.gap ?? 0}px;
-  flex-wrap: ${props => props.wrap ?? 'nowrap'};
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
 `;
 // TODO: Fix 'gap'
 
@@ -66,9 +67,9 @@ export const Flex = styled(Section)`
 // Form and Inputs
 export const InputField = styled(BasePuiTextInput)`
   border: 1px #${props => props.border ?? color_primary_light} solid;
-  border-radius: 10px;
+  border-radius: ${props => props.radius ?? 10}px;
   width: 100%;
-  padding: 10px;
+  padding: 7px 10px;
   font-size: ${props => props.size ?? input_font_size}px;
 `;
 
