@@ -23,15 +23,19 @@ export default function Login({ navigation }) {
 
   const handleSubmit = async () => {
     setLoading(true)
-    await axios.post('re-issue-token', values)
-      .then(res => {
-        if (res.data.status) {
-          securestore.save('user_session', res.data.token)
-          navigation.navigate('UserStack')
-          setLoading(false)
-        }
-      })
-      .catch(e => setLoading(false));
+    try {
+      await axios.post('re-issue-token', values)
+        .then(res => {
+          if (res.data.status) {
+            securestore.save('user_session', res.data.token)
+            navigation.navigate('UserStack')
+            setLoading(false)
+          }
+        })
+        .catch(e => { });
+    } catch (e) {
+      setLoading(false)
+    }
   }
 
   return (
