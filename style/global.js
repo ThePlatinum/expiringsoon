@@ -19,6 +19,7 @@ const BasePuiText = styled.Text`
   font-family: 'merriweather-Light';
   color: ${props => props.color ?? 'black'};
   opacity: ${props => props.muted ? 0.5 : 1};
+  text-align: ${props => props.align ?? 'left'};
 `
 const BasePuiTextInput = styled.TextInput`
   font-family: 'merriweather-Light';
